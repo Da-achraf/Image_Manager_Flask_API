@@ -38,7 +38,7 @@ def calculate_moments(image):
 
     return (X, Y)
 
-def find_dominant_colors(image, num_colors=3):
+def find_dominant_colors(image, num_colors=10):
     # convert the image to RGB color space
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
@@ -110,4 +110,4 @@ api.add_resource(MomentsDescriptor, '/moments')
 api.add_resource(DominantColorsDescriptor, '/dominant_colors')
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=true)
+    app.run(host='0.0.0.0', port=8000, debug=True)
